@@ -1,0 +1,96 @@
+.notepad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  resize: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  padding: 16px;
+  border: none;
+  box-shadow: 0px 0px 100px rgba(91, 168, 255, 0.137);
+  background-color: black;
+  color: white;
+  width: 400px;
+  height: 600px;
+  border: solid 2px rgba(255, 255, 255, 0.089);
+}
+
+.notepad:focus {
+  outline: none;
+}
+
+.add {
+  color: white;
+  font-size: 32px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 32px;
+  border: solid 2px white;
+  width: fit-content; 
+}
+
+.tabs > ion-icon{
+  color: white;
+  font-size: 32px;
+  min-width: 32px;
+  border-radius: 32px;
+  transition: 300ms;
+  cursor: pointer;
+  margin: 12px 12px 12px 0px;
+
+}
+.tabs > ion-icon:hover {
+  box-shadow: 0px 0px 0px 2px rgb(0, 255, 157);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.tabs {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 4px;
+  max-width: 800px;
+  overflow-x: auto;
+  margin: 6px;
+  margin-right: auto;
+}
+.tab {
+  padding: 12px 24px 12px 24px ;
+  min-width: fit-content;
+  background-color: rgba(0, 0, 255, 0);
+  border-radius: 6px;
+  border: solid 2px rgba(255, 255, 255, 0.288);
+  user-select: none;
+  cursor: pointer;
+  transition: 300ms;
+  margin: 4px;
+}
+
+.tab:hover {
+  background-color: white;
+  color: black
+}
+
+.tabs::-webkit-scrollbar {
+ height: 8px;
+}
+
+/* Track */
+.tabs::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+.tabs::-webkit-scrollbar-thumb {
+  background: #888;
+    border-radius: 16px;
+}
+
+/* Handle on hover */
+.tabs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
