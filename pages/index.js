@@ -30,6 +30,7 @@ export default function Home() {
                       spellCheck="false"
                   ></textarea>
               </EnhanceAI>
+              <p>Built by eefh1 on Replit for ClayPascal</p>
           </div>
       </div>
   );
