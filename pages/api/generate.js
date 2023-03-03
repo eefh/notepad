@@ -6,12 +6,19 @@ const openai = new OpenAIApi(configuration);
 
 
 export default async function handler(req, res) {
-    const response = await openai.createCompletion({
+    console.log(req.body)
+    const completion = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: req.body.prompt,
         temperature: 0,
-        max_tokens: 7,
+        max_tokens: 256,
     });
 
-    res.status(200).json({ name: "John Doe" });
+    res.status(200).json({ result: completion.data.choices[0].text });
+}
+
+
+const generatePrompt = (prompt) => {
+
+    return `You are a clever autosuggester, complete this sentence, don't use any newlines if you don't need to: "${prompt}": `
 }

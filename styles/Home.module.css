@@ -1,23 +1,93 @@
 .notepad {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 8px;
-  resize: none;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  padding: 16px;
+  font-size: 18px;
   border: none;
-  box-shadow: 0px 0px 100px rgba(91, 168, 255, 0.137);
   background-color: black;
   color: white;
   width: 400px;
-  height: 600px;
+  height: 700px;
+  max-height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
   border: solid 2px rgba(255, 255, 255, 0.089);
+  position: relative;
 }
 
 .notepad:focus {
   outline: none;
+}
+.type {
+  margin: 16px;
+  width: 92%;
+  font-size: 18px;
+  height: fit-content;
+  outline: none;
+}
+.plus {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  right: 0px;
+  margin: 16px;
+  font-size: 28px;
+  padding: 4px;
+  background-color: rgba(176, 211, 228, 0.411);
+  border-radius: 32px;
+  cursor: pointer;
+  animation: spawn 300ms linear;
+}
+
+.textarea {
+  width: 100%;
+  height: 10%;
+}
+
+.complete {
+  color: rgba(255, 255, 255, 0.534);
+-moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+  -ms-user-select: none;
+  user-select: none;
+  width: fit-content;
+  margin: 0px 16px 16px 16px;
+  margin-right: auto;
+}
+
+.cancel {
+  animation: spawn 300ms linear;
+  cursor: pointer;
+  padding: 16px 32px 16px 32px;
+}
+
+@keyframes spawn {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes slide {
+  0% {
+
+  }
+
+  100% {
+
+  }
 }
 
 .add {
@@ -48,6 +118,42 @@
   align-items: center;
   flex-direction: column;
 }
+.options {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(141, 151, 156, 0.11);
+  width: 100%;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-size: 24px;
+  user-select: none;
+  animation: slide 300ms linear;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0%;
+    height: -30px;
+  }
+
+  100% {
+    opacity: 100%;
+    height: auto;
+  }
+}
+
+.button {
+  cursor: pointer;
+  width: fit-content;
+  padding: 16px 32px 16px 32px;
+}
+.container > i {
+  color: white;
+}
+
 .tabs {
   display: flex;
   align-items: center;
